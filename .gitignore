@@ -29,6 +29,10 @@ build/Release
 # Dependency directories
 node_modules
 jspm_packages
+.idea
+app.js
+index.html
+dist
 
 # Optional npm cache directory
 .npm
