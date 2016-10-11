@@ -1,15 +1,23 @@
 (function(root) {
   'use strict';
 
+/**
+  * isType.js 1.0.0
+  * https://github.com/ahadb/is
+  * (c) 2016 Ahad Bokhari
+  * isType may be freely distributed under the MIT license
+*/
+
+  const posInfinity = Number.POSITIVE_INFINITY;
+  const negInfinity = Number.NEGATIVE_INFINITY;
+  var root = this;
+  var previousModule = root.isType;
+
   /**
    * Expose `isType`
    */
 
   const isType = {};
-  const posInfinity = Number.POSITIVE_INFINITY;
-  const negInfinity = Number.NEGATIVE_INFINITY;
-  var root = this;
-  var previousModule = root.isType;
 
   isType.version = function() {
     return 0.01;
@@ -110,7 +118,7 @@
    * Test if `val` is an object.
    *
    * @param {Mixed}
-   * @return {Boolean} true if 'val' is an object, false if not
+   * @return {Boolean} true if 'val' is an object (not primitive, ie: null), false if not
    * @api public
    */
 
