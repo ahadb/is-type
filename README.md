@@ -1,2 +1,2 @@
 # is
-Type checking library for JavaScript
+Type checking library for Node and the browser.
