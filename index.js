@@ -1,13 +1,23 @@
 (function(root) {
+  'use strict';
 
   /**
    * Expose `isType`
    */
 
-  var isType = {};
+  const isType = {};
+  const posInfinity = Number.POSITIVE_INFINITY;
+  const negInfinity = Number.NEGATIVE_INFINITY;
+  var root = this;
+  var previousModule = root.isType;
 
   isType.version = function() {
     return 0.01;
+  };
+
+  isType.noConflict = function() {
+    root.isType = previousModule;
+    return isType;
   };
 
   if (typeof module === 'object' && module && typeof module.exports === 'object') {
@@ -15,7 +25,7 @@
   } else {
     root.isType = root.$ = isType;
     if (typeof define === 'function' && define.amd) {
-      define('jquery', [], function() { return isType; });
+      define('isType', [], function() { return isType; });
     }
   }
 
@@ -71,4 +81,44 @@
     return typeof val === 'number';
   };
 
-})(this);
+  isType.nan = function(val) {
+    return typeof val !== 'number';
+  };
+
+  /**
+   * isType.infinite
+   * Test if `val` is an infinite number.
+   *
+   * @param {Mixed}
+   * @return {Boolean} true if 'val' is an infinite number, false if not
+   * @api public
+   */
+
+  isType.infinite = function(val) {
+    if (val === posInfinity) {
+      return true;
+    }
+    if (val === negInfinity) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  /**
+   * isType.object
+   * Test if `val` is an object.
+   *
+   * @param {Mixed}
+   * @return {Boolean} true if 'val' is an object, false if not
+   * @api public
+   */
+
+  isType.object = function(val) {
+    if (val === null) {
+      return false;
+    }
+    return ( (typeof val === 'function') || (typeof val === 'object') );
+  };
+
+}).call(this);
