@@ -1,17 +1,23 @@
-(function(root) {
+(() => {
   'use strict';
 
 /**
   * isType.js 1.0.0
-  * https://github.com/ahadb/is
+  * https://github.com/ahadb/isType
   * (c) 2016 Ahad Bokhari
   * isType may be freely distributed under the MIT license
 */
 
   const posInfinity = Number.POSITIVE_INFINITY;
   const negInfinity = Number.NEGATIVE_INFINITY;
-  var root = this;
-  var previousModule = root.isType;
+  const root = this;
+  let previousModule = root.isType;
+  console.log(`/**
+  * isType.js 1.0.0
+  * https://github.com/ahadb/isType
+  * (c) 2016 Ahad Bokhari
+  * isType may be freely distributed under the MIT license
+*/`);
 
   /**
    * Expose `isType`
@@ -31,7 +37,7 @@
   if (typeof module === 'object' && module && typeof module.exports === 'object') {
     module.exports = isType;
   } else {
-    root.isType = root.$ = isType;
+    root.isType = root.is = isType;
     if (typeof define === 'function' && define.amd) {
       define('isType', [], function() { return isType; });
     }
@@ -89,10 +95,6 @@
     return typeof val === 'number';
   };
 
-  isType.nan = function(val) {
-    return typeof val !== 'number';
-  };
-
   /**
    * isType.infinite
    * Test if `val` is an infinite number.
@@ -128,5 +130,61 @@
     }
     return ( (typeof val === 'function') || (typeof val === 'object') );
   };
+
+  /**
+   * isType.string
+   * Test if `val` is a string.
+   *
+   * @param {Mixed}
+   * @return {Boolean} true if 'val' is a string, false if not - supports template literals as well
+   * @api public
+   */
+
+  isType.string = function(val) {
+    return typeof val === 'string';
+  };
+
+  /**
+   * isType.func
+   * Test if `val` is a function.
+   *
+   * @param {Mixed}
+   * @return {Boolean} true if 'val' is a function, false if not.
+   * @api public
+   */
+
+  isType.func = function(val) {
+    return !!(val && val.call && val.constructor && val.apply);
+  };
+
+  /**
+   * isType.promise
+   * Test if `val` is a promise.
+   *
+   * @param {Mixed}
+   * @return {Boolean} true if 'val' is a promise, false if not.
+   * @api public
+   * @notes experimental
+   */
+
+  isType.promise = function(val) {
+    return typeof val === 'object' && typeof val.then === 'function'
+  };
+
+  /**
+   * isType.generator
+   * Test if `val` is a promise.
+   *
+   * @param {Mixed}
+   * @return {Boolean} true if 'val' is a promise, false if not.
+   * @api public
+   * @notes experimental
+   */
+
+  isType.generator = function(val) {
+    // implementation here
+  };
+
+
 
 }).call(this);
