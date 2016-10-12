@@ -182,7 +182,9 @@
    */
 
   isType.generator = function(val) {
-    // implementation here
+    // would be nice, but probably not possible since any function
+    // can return an iterable object - doesn't matter if it's a
+    // generator function or not
   };
 
 
