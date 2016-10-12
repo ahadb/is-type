@@ -187,6 +187,71 @@
     // generator function or not
   };
 
+  /**
+   * isType.regex
+   * Test if `val` is a promise.
+   *
+   * @param {Mixed}
+   * @return {Boolean} true if 'val' is a regex, false if not.
+   * @api public
+   */
+
+  isType.regex = function(val) {
+
+  };
+
+  /**
+   * isType.date
+   * Test if `val` is date obj.
+   *
+   * @param {Mixed}
+   * @return {Boolean} true if 'val' is a date obj, false if not.
+   * @api public
+   */
+
+  isType.date = function(val) {
+
+  };
+
+  /**
+   * isType.integer
+   * Test if `val` is integer.
+   *
+   * @param {Mixed}
+   * @return {Boolean} true if 'val' is a integer, false if not.
+   * @api public
+   */
+
+  isType.integer = function(val) {
+
+  };
+
+  /**
+   * isType.float
+   * Test if `val` is float.
+   *
+   * @param {Mixed}
+   * @return {Boolean} true if 'val' is a float, false if not.
+   * @api public
+   */
+
+  isType.float = function(val) {
+
+  };
+
+  /**
+   * isType.symbol
+   * Test if `val` is symbol.
+   *
+   * @param {Mixed}
+   * @return {Boolean} true if 'val' is symbol, false if not.
+   * @api public
+   */
+
+  isType.symbol = function(val) {
+
+  };
+
 
 
 }).call(this);
