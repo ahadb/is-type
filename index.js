@@ -14,7 +14,6 @@
   const root = this;
   let previousModule = root.isType;
 
-
   /**
    * Expose `isType`
    */
@@ -115,7 +114,7 @@
     if (val === null) {
       return false;
     }
-    return ( (typeof val === 'function') || (typeof val === 'object') );
+    return ((typeof val === 'function') || (typeof val === 'object'));
   };
 
   /**
@@ -155,7 +154,7 @@
    */
 
   isType.promise = function(val) {
-    return typeof val === 'object' && typeof val.then === 'function'
+    return typeof val === 'object' && typeof val.then === 'function';
   };
 
   /**
@@ -184,7 +183,7 @@
    */
 
   isType.regex = function(val) {
-    if(val instanceof RegExp) {
+    if (val instanceof RegExp) {
       return true;
     } else {
       return false;

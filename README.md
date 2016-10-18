@@ -5,12 +5,11 @@ Small type checking library for Node and the browser.
 
 Use this module when you need to determine what type a value is. Works in the browser, Node and AMD.
 
-##Installing git st
+##Installation
 
 ```javascript
 npm i is-type --save-dev
 ```
-
 
 ##Usage
 
@@ -18,19 +17,19 @@ Simply require the `is-type` module. The export function can be used in any modu
 
 ```javascript
 const is = require('is-type');
-console.log(is.undefined(undefined));
-console.log(is.null(null));
-console.log(is.nan(90));
-console.log(is.number(10.2343));
-console.log(is.infinite([]));
-console.log(is.object(Object.create(null)));
-console.log(is.string(`helloworld`));
-console.log(is.func(1));
-console.log(is.number(1e10));
-console.log(is.promise(p));
-console.log(is.regex(true));
-console.log(is.integer(3.1112));
-console.log(is.symbol(sym));
+is.undefined(undefined);
+is.null(null);
+is.nan(90);
+is.number(10.2343);
+is.infinite([]);
+is.object(Object.create(null));
+is.string(`helloworld`);
+is.func(1);
+is.number(1e10);
+is.promise(p)
+is.regex(true);
+is.integer(3.1112);
+is.symbol(sym);
 ```
 
 ##TODO
