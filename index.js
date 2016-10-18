@@ -197,7 +197,11 @@
    */
 
   isType.regex = function(val) {
-
+    if(val instanceof RegExp) {
+      return true;
+    } else {
+      return false;
+    }
   };
 
   /**
@@ -223,7 +227,7 @@
    */
 
   isType.integer = function(val) {
-
+    return Number(val) === val && val % 1 === 0;
   };
 
   /**
@@ -236,7 +240,7 @@
    */
 
   isType.float = function(val) {
-
+    return Number(val) === val && val % 1 !== 0;
   };
 
   /**
