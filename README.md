@@ -5,11 +5,12 @@ Small type checking library for Node and the browser.
 
 Use this module when you need to determine what type a value is. Works in the browser, Node and AMD.
 
-##Installing 
+##Installing git st
 
 ```javascript
 npm i is-type --save-dev
 ```
+
 
 ##Usage
 
