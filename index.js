@@ -1,23 +1,19 @@
 (() => {
   'use strict';
 
-/**
-  * isType.js 1.0.0
-  * https://github.com/ahadb/isType
-  * (c) 2016 Ahad Bokhari
-  * isType may be freely distributed under the MIT license
-*/
+  /**!
+   * is-type
+   * a JavaScript library for testing a type of value
+   *
+   * @copyright 2016 Ahad Bokhari
+   * @license MIT
+   */
 
   const posInfinity = Number.POSITIVE_INFINITY;
   const negInfinity = Number.NEGATIVE_INFINITY;
   const root = this;
   let previousModule = root.isType;
-  console.log(`/**
-  * isType.js 1.0.0
-  * https://github.com/ahadb/isType
-  * (c) 2016 Ahad Bokhari
-  * isType may be freely distributed under the MIT license
-*/`);
+
 
   /**
    * Expose `isType`
@@ -33,15 +29,6 @@
     root.isType = previousModule;
     return isType;
   };
-
-  if (typeof module === 'object' && module && typeof module.exports === 'object') {
-    module.exports = isType;
-  } else {
-    root.isType = root.is = isType;
-    if (typeof define === 'function' && define.amd) {
-      define('isType', [], function() { return isType; });
-    }
-  }
 
   /**
    * isType.undefined
@@ -214,7 +201,7 @@
    */
 
   isType.date = function(val) {
-
+    return val instanceof Date;
   };
 
   /**
@@ -253,9 +240,17 @@
    */
 
   isType.symbol = function(val) {
-
+    return typeof val === 'symbol';
   };
 
-
+  // expose in browser, node and AMD
+  if (typeof module === 'object' && module && typeof module.exports === 'object') {
+    module.exports = isType;
+  } else {
+    root.isType = root.is = isType;
+    if (typeof define === 'function' && define.amd) {
+      define('isType', [], function() { return isType; });
+    }
+  }
 
 }).call(this);
