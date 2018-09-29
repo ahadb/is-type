@@ -1,7 +1,7 @@
 # is-type
 Small type checking library for Node and the browser.
 
-##Overview
+## Overview
 
 Use this module when you need to determine what type a value is. Works in the browser, Node and AMD.
 
@@ -11,7 +11,7 @@ Use this module when you need to determine what type a value is. Works in the br
 npm i is-type --save-dev
 ```
 
-##Usage
+## Usage
 
 Simply require the `is-type` module. The export function can be used in any module you desire:
 
@@ -32,29 +32,20 @@ is.integer(3.1112);
 is.symbol(sym);
 ```
 
-##TODO
-
-Add tests..
-
-##Tests
+## Tests
 
 This module uses gulp for eslint, mocha, and code coverage tools.
 
 Run `gulp init`
 
-
-```javascript
-// wip
-```
-
-##Related Modules
+## Related Modules
 
 * [node-range](https://github.com/ahadb/node-range)
 * [first-of-array](https://github.com/ahadb/first-of-array)
 * [last-of-array](https://github.com/ahadb/last-of-array)
 * [node-camel-case](https://github.com/ahadb/node-camel-case)
 
-##Contributing
+## Contributing
 
 Feel free to file an issue or bug.
 
